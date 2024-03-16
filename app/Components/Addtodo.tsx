@@ -11,7 +11,7 @@ export default function Addtodo() {
   const onclickHandler = async () => {
     try {
       if (task) {
-        const res = await fetch("/api/todo", {
+        const res = await fetch("http://localhost:3000/api/todo", {
           method: "POST",
           body: JSON.stringify({
             task: task,

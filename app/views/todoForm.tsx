@@ -6,19 +6,17 @@ import { allTaskType } from "../lib/utils/type";
 export const getTasksFromTable = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/todo", {
-      cache: "no-cache",
+      cache: "no-store",
     });
     const tasks = res.json();
-
     return tasks;
   } catch (error) {
     console.log((error as { message: string }).message);
   }
 };
-
 export default async function TodoForm() {
   const task = await getTasksFromTable();
-  // console.log("nasir task", task);
+  console.log("nasirsss task", task);
 
   return (
     <div className="">
