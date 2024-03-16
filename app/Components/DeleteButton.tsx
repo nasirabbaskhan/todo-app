@@ -8,7 +8,7 @@ export default function DeleteButton(props: { id: number }) {
   const deleteHandler = async () => {
     try {
       if (id) {
-        const res = fetch("http://localhost:3000/api/todo", {
+        const res = fetch("https://todo-app-nextjs-smoky.vercel.app/api/todo", {
           method: "DELETE",
           body: JSON.stringify({
             id: id,

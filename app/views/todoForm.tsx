@@ -5,9 +5,12 @@ import { allTaskType } from "../lib/utils/type";
 
 export const getTasksFromTable = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/todo", {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      "https://todo-app-nextjs-smoky.vercel.app/api/todo",
+      {
+        cache: "no-store",
+      }
+    );
     const tasks = res.json();
     return tasks;
   } catch (error) {

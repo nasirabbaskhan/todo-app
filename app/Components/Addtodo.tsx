@@ -11,12 +11,15 @@ export default function Addtodo() {
   const onclickHandler = async () => {
     try {
       if (task) {
-        const res = await fetch("http://localhost:3000/api/todo", {
-          method: "POST",
-          body: JSON.stringify({
-            task: task,
-          }),
-        });
+        const res = await fetch(
+          "https://todo-app-nextjs-smoky.vercel.app/api/todo",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              task: task,
+            }),
+          }
+        );
 
         await refreshData();
       }
