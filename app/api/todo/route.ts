@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   try {
     const res = await db.select().from(todoTable);
 
-    return NextResponse.json({ data: res });
+    return NextResponse.json(res);
   } catch (err) {
     console.log((err as { message: string }).message);
     return NextResponse.json({
