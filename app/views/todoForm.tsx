@@ -32,13 +32,6 @@ export default async function TodoForm() {
                 </div>
               );
             })}
-            {/* {task.data.map((item: any) => {
-              return (
-                <div key={item.id}>
-                  <Todolist task={item.task} id={item.id} />
-                </div>
-              );
-            })} */}
           </div>
 
           <Addtodo />
