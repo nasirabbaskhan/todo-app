@@ -14,10 +14,8 @@ export default function DeleteButton(props: { id: number }) {
             id: id,
           }),
         });
-        // refresh();
-        await refreshData();
 
-        // return NextResponse.json({ data: res });
+        await refreshData();
       } else {
         throw new Error("ID is not provided");
       }

@@ -1,9 +1,11 @@
 import Addtodo from "../Components/Addtodo";
 import Todolist from "../Components/todolist";
+import { todo } from "../lib/drizzle";
+import { allTaskType } from "../lib/utils/type";
 
 export const getTasksFromTable = async () => {
   try {
-    const res = await fetch("http://127.0.0.1:3000/api/todo", {
+    const res = await fetch("http://localhost:3000/api/todo", {
       cache: "no-cache",
     });
     const tasks = res.json();
@@ -15,7 +17,8 @@ export const getTasksFromTable = async () => {
 };
 
 export default async function TodoForm() {
-  const task = await getTasksFromTable();
+  const task: allTaskType = await getTasksFromTable();
+  console.log("nasir task", task);
 
   return (
     <div className="">
@@ -29,6 +32,13 @@ export default async function TodoForm() {
                 </div>
               );
             })}
+            {/* {task.data.map((item: any) => {
+              return (
+                <div key={item.id}>
+                  <Todolist task={item.task} id={item.id} />
+                </div>
+              );
+            })} */}
           </div>
 
           <Addtodo />
